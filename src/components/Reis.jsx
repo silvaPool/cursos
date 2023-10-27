@@ -5,8 +5,9 @@ import styled from "styled-components";
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import { Modal } from '@mui/material';
-import Login from '../pages/Login';
-import { useNavigate } from 'react-router-dom';
+import Login from '../pages/autenticacao/Login';
+import { Outlet, useNavigate } from 'react-router-dom';
+import Cadastro from '../pages/autenticacao/cadastro';
 
 const style = {
   position: 'absolute',
@@ -32,9 +33,24 @@ export default function Reis() {
 
   const [open, setOpen] = useState(false);
 
+  const [isCadastroVisible, setIsCadastroVisible] = useState(false);
+
+  const handleOpenCadastro = () => {
+    setIsCadastroVisible(true);
+  }
+
+  const handleCloseCadastro = () => {
+    setIsCadastroVisible(false);
+  }
+
   const handleOpen = () => {
     setOpen(true);
     
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setIsCadastroVisible(false);
   };
 
   const handleSaibaMaisClick = () => {
@@ -42,9 +58,12 @@ export default function Reis() {
     navigate("/login");
   }
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const navigateCadastroPage = () => {
+    setIsCadastroVisible(true);
+    navigate("/cadastro");
+  }
+
+ 
 
   return (
     <StyledHeader sx={{ flexGrow: 1 }}>
@@ -58,9 +77,14 @@ export default function Reis() {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+       
       >
+         
         <Box sx={style}>
-            <Login />
+          {isCadastroVisible ? <Cadastro /> : <Login />}
+          {!isCadastroVisible && (
+               <Button variant='outlined' sx={{color: 'black'}} onClick={navigateCadastroPage}>Cadastrar</Button>
+          )}
         </Box>
       </Modal>
     </StyledHeader>
