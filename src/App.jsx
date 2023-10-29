@@ -7,6 +7,7 @@ import LandingPage from './components/LandingPage'
 import LayoutInterior from './components/LayoutInterior'
 import Cadastro from './pages/autenticacao/cadastro'
 import { ThemeProvider } from '@mui/material'
+import { Auth } from './context/AuthContext'
 
 
 function App() {
@@ -16,13 +17,14 @@ function App() {
     <>
 
       <ThemeProvider theme={theme}>
-
-        <Routes>
-          <Route path="/" element={<LandingPage />}>
-            <Route path="/login" element={<Login />} />
-            <Route path="/cadastro" element={<Cadastro />} />
-          </Route>
-        </Routes>
+        <Auth>
+          <Routes>
+            <Route path="/" element={<LandingPage />}>
+              <Route path="/login" element={<Login />} />
+              <Route path="/cadastro" element={<Cadastro />} />
+            </Route>
+          </Routes>
+        </Auth>
 
         {/* <LayoutInterior /> */}
 
