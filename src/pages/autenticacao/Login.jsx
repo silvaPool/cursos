@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { Button, TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
 
 const validationSchema = yup.object({
@@ -21,15 +22,16 @@ const validationSchema = yup.object({
 
 const Login = () => {
 
+    const {login} = useContext(AuthContext);
+
     const formik = useFormik({
         initialValues: {
             email: '',
             password: '',
         },
         validationSchema: validationSchema,
-        onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
-            console.log(values);
+        onSubmit: async (values) => {
+           const res = await login(values.email, values.password);
            
         },
     });
