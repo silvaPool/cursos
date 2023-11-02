@@ -55,12 +55,12 @@ export default function Reis() {
 
   const handleSaibaMaisClick = () => {
     handleOpen();
-    navigate("/login");
+    navigate("/auth/login");
   }
 
   const navigateCadastroPage = () => {
     setIsCadastroVisible(true);
-    navigate("/cadastro");
+    navigate("/auth/cadastro");
   }
 
  
