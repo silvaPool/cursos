@@ -22,7 +22,11 @@ const validationSchema = yup.object({
 
 const Login = () => {
 
-    const {login} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const {login, user} = useContext(AuthContext);
+
+
+  
 
     const formik = useFormik({
         initialValues: {
@@ -32,6 +36,10 @@ const Login = () => {
         validationSchema: validationSchema,
         onSubmit: async (values) => {
            const res = await login(values.email, values.password);
+
+           if (res.user) {
+                navigate("/home/estudante");
+           }
            
         },
     });
@@ -68,7 +76,7 @@ const Login = () => {
                     helperText={formik.touched.password && formik.errors.password}
                 />
                 <Button color="primary" variant="contained" fullWidth type="submit">
-                    Submit
+                    Entrar
                 </Button>
             </form>
         </div>
