@@ -31,6 +31,7 @@ export const Auth = ({ children }) => {
             const timeStamp = toTimeStamp(newDate);
             if (timeStamp > decode.exp) {
                 console.log("maior");
+                logout();
                 setLoading(false);
             } else {
                 if (storagedUser) {
@@ -52,8 +53,8 @@ export const Auth = ({ children }) => {
             
             setUser(resp.user);
 
-            localStorage.setItem("@AccessToken", resp.user.accessToken);
-            localStorage.setItem("@User", JSON.stringify(resp.user));
+            localStorage.setItem("@App:token", resp.user.accessToken);
+            localStorage.setItem("@App:user", JSON.stringify(resp.user));
 
             return true;
         } catch (error) {

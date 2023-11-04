@@ -101,16 +101,28 @@ const theme = createTheme({
         MuiPaper: {
             styleOverrides: {
                 root: {
-                    backgroundColor: 'black',
+                    backgroundColor: 'white',
                     marginBottom: '1rem',
                     borderRadius: '2rem',
                    
-                }
-            }
-        }
+                },
+            },
+        },
+        MuiModal: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                },
+            },
+        },
+        MuiToolbar: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: 'black',
+                },
+            },
+        },
     },
-
-
 
 });
 

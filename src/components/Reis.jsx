@@ -16,8 +16,8 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 400,
   height: 500,
-  bgcolor: 'background.paper',
-  border: '2px solid blue',
+  bgcolor: 'Snow',
+  borderRadius: '1rem',
   color: 'black',
   boxShadow: 24,
   pt: 2,
@@ -45,7 +45,7 @@ export default function Reis() {
 
   const handleOpen = () => {
     setOpen(true);
-    
+
   };
 
   const handleClose = () => {
@@ -63,7 +63,7 @@ export default function Reis() {
     navigate("/auth/cadastro");
   }
 
- 
+
 
   return (
     <StyledHeader sx={{ flexGrow: 1 }}>
@@ -77,13 +77,13 @@ export default function Reis() {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-       
+
       >
-         
+
         <Box sx={style}>
           {isCadastroVisible ? <Cadastro /> : <Login />}
           {!isCadastroVisible && (
-               <Button variant='outlined' sx={{color: 'black'}} onClick={navigateCadastroPage}>Cadastrar</Button>
+            <Button variant='outlined' sx={{ color: 'black' }} onClick={navigateCadastroPage}>Cadastrar</Button>
           )}
         </Box>
       </Modal>

@@ -1,5 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import EstudanteRoutes from "./estudanteRoutes";
+import EstudanteRoutes from "./EstudanteRoutes";
 import OpenRoutes from "./OpenRoutes";
 import AdminRoutes from "./AdminRoutes";
 

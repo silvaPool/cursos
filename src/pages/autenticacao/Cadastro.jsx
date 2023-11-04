@@ -4,6 +4,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { Button, TextField } from '@mui/material';
 import { AuthContext } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 
 const validationSchema = yup.object({
@@ -24,7 +25,10 @@ const validationSchema = yup.object({
 
 const Cadastro = () => {
 
+   
+
     const {register} = useContext(AuthContext);
+
    
 
     const formik = useFormik({

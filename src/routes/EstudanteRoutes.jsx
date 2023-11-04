@@ -1,5 +1,6 @@
 import AuthGuard from '../utils/AuthGuard';
 import LayoutInterior from '../pages/estudante/LayoutInterior';
+import EditarPerfil from '../pages/estudante/EditarPerfil';
 
 const EstudanteRoutes = [
 
@@ -10,9 +11,12 @@ const EstudanteRoutes = [
                 <LayoutInterior />
             </AuthGuard>
         ),
-        // children: [
-
-        // ]
+        children: [
+            {
+                path: "edit-profile",
+                element: <EditarPerfil />
+            },
+        ]
     },
 
 ];
