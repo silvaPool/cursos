@@ -8,6 +8,7 @@ import { Modal } from '@mui/material';
 import Login from '../pages/autenticacao/Login';
 import { Outlet, useNavigate } from 'react-router-dom';
 import Cadastro from '../pages/autenticacao/cadastro';
+import StyledHero from './StyledHeader';
 
 const style = {
   position: 'absolute',
@@ -66,9 +67,9 @@ export default function Reis() {
 
 
   return (
-    <StyledHeader sx={{ flexGrow: 1 }}>
+    <StyledHero sx={{ flexGrow: 1 }}>
       <Typography variant='h1'>
-        Reign: Pai para Filho
+        Reign
       </Typography>
 
       <Button onClick={handleSaibaMaisClick} variant='outlined'>Entrar</Button>
@@ -87,7 +88,7 @@ export default function Reis() {
           )}
         </Box>
       </Modal>
-    </StyledHeader>
+    </StyledHero>
 
 
   );

@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import styled from "styled-components";
 
 
-const StyledHeader = styled(Box)`
+const StyledHero = styled(Box)`
     & {
         /* background: #232526;  
         background: -webkit-linear-gradient(to right, #414345, #232526); 
@@ -18,4 +18,4 @@ const StyledHeader = styled(Box)`
     }
 `
 
-export default StyledHeader;
+export default StyledHero;

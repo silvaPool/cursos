@@ -5,13 +5,16 @@ import Depoimentos from "./Depoimentos";
 import Duvidas from "./Duvidas";
 import Footer from "./Footer";
 import Informativo from "./Informativo";
-import Reis from "./Reis";
+import Hero from "./Hero";
+import Header from "./Header";
+
 
 function LandingPage() {
 
     return (
         <>
-            <Reis />
+            <Header />
+            <Hero />
             <Conteudo />
             <Informativo />
             <Cursos />
