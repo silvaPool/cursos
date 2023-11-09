@@ -1,5 +1,5 @@
 import * as React from 'react';
-import StyledHeader from './StyledHeader';
+import StyledHeader from './StyledHero';
 import { Box, Typography } from '@mui/material';
 import styled from "styled-components";
 import Button from '@mui/material/Button';
@@ -8,7 +8,10 @@ import { Modal } from '@mui/material';
 import Login from '../pages/autenticacao/Login';
 import { Outlet, useNavigate } from 'react-router-dom';
 import Cadastro from '../pages/autenticacao/cadastro';
-import StyledHero from './StyledHeader';
+import StyledHero from './StyledHero';
+import Rei from "../assets/images/reibrabo.png";
+import StyledBoxHero from './StyledBoxHero';
+import StyledButtonHero from './StyledButtonHero';
 
 const style = {
   position: 'absolute',
@@ -68,11 +71,21 @@ export default function Reis() {
 
   return (
     <StyledHero sx={{ flexGrow: 1 }}>
+
+     <StyledBoxHero>
+     
       <Typography variant='h1'>
         Reign
       </Typography>
+      <Typography sx={{fontSize: '1.3rem'}}>
+      Descubra o passado, domine o futuro: seu destino real começa aqui
+      </Typography>
+      <Typography sx={{fontSize: '2rem'}}>
+      Explore a riqueza cultural dos reinados em nossos cursos educativos e inspiradores.
+      </Typography>
 
-      <Button onClick={handleSaibaMaisClick} variant='outlined'>Entrar</Button>
+
+      <StyledButtonHero onClick={handleSaibaMaisClick}>Entrar</StyledButtonHero>
       <Modal
         open={open}
         onClose={handleClose}
@@ -88,6 +101,10 @@ export default function Reis() {
           )}
         </Box>
       </Modal>
+
+      </StyledBoxHero>
+
+      
     </StyledHero>
 
 
