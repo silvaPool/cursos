@@ -3,16 +3,9 @@ import theme from './theme/theme'
 import { ThemeProvider } from '@mui/material'
 import { Auth } from './context/AuthContext'
 import Routes from './routes/AppRoutes';
+import MyForm from './pages/estudante/Turma';
 
-// import ChatBot from 'react-simple-chatbot';
- 
-// const steps = [
-//     {
-//         id: '0',
-//         message: 'Hey Geek!',
-//         end: true
-//     }
-// ];
+
 
 function App() {
 
@@ -25,11 +18,9 @@ function App() {
           <Routes />
         </Auth>
 
-        {/* <div className="App">
-          <h1>Welcome to Geeksforgeeks</h1>
-          <ChatBot steps={steps} />
-        </div> */}
+        {/* <MyForm /> */}
 
+       
 
       </ThemeProvider>
 

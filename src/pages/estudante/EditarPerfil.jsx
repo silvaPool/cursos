@@ -10,6 +10,7 @@ import FeedIcon from '@mui/icons-material/Feed';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import { ErrorMessage, Field, Form, Formik, useField } from "formik";
 import * as yup from 'yup';
+import Turma from './Turma';
 
 const MyTextInput = ({ label, ...props }) => {
 
@@ -229,25 +230,7 @@ function EditarPerfil() {
                                     </Typography>
                                     <Divider sx={{ backgroundColor: 'white' }} />
 
-
-                                    <Grid container rowSpacing={5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                                        <Grid item xs={6}>
-                                            <TextField fullWidth id="outlined-basic" label="Nome da turma" variant="outlined" />
-                                        </Grid>
-                                        <Grid item xs={6}>
-                                            <TextField fullWidth id="outlined-basic" label="Sobrenome" variant="outlined" />
-                                        </Grid>
-                                        <Grid item xs={6}>
-                                            <TextField fullWidth id="outlined-basic" label="E-Mail" variant="outlined" />
-                                        </Grid>
-                                        <Grid item xs={6}>
-                                            <TextField fullWidth id="outlined-basic" label="Telefone para contato" variant="outlined" />
-                                        </Grid>
-                                    </Grid>
-                                    <Box sx={{ marginTop: '1rem', display: 'flex', gap: '1rem' }}>
-                                        <Button variant="outlined">Cancelar</Button>
-                                        <Button variant="contained">Salvar</Button>
-                                    </Box>
+                                   <Turma />
 
                                 </TabPanel>
                                 <TabPanel value="3">Formação Acadêmica</TabPanel>
