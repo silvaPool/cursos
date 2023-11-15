@@ -2,6 +2,7 @@ import * as Yup from "yup";
 import React from "react";
 import { FieldArray, Form, Formik, getIn } from "formik";
 import { Button, TextField } from "@mui/material";
+import styled from "styled-components";
 
 
 
@@ -15,6 +16,7 @@ const validationSchema = Yup.object().shape({
 });
 
 const debug = true;
+
 
 
 
@@ -112,6 +114,14 @@ const Turma = () => {
                                 </div>
                             )}
                         </FieldArray>
+
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            disabled={!isValid || values.people.length === 0}
+                            >
+                                Submit
+                            </Button>
                     </Form>
                 )}
 
