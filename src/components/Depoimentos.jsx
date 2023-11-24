@@ -12,55 +12,62 @@ import Stack from '@mui/material/Stack';
 import EstudanteAvatar from '../assets/images/estudante.jpg';
 import styled from 'styled-components';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-
+import Estudante from '../assets/images/estudante.jpg'
 
 
 function Depoimentos() {
 
     return (
         <StyledDepoimentos>
-            <Typography variant="h2" sx={{color: 'white', marginTop: '5px'}}>
+            <Typography variant="h2" sx={{ color: 'white', marginTop: '5px' }}>
                 O que os alunos dizem sobre a Reign
             </Typography>
 
-            <Box sx={{display: 'flex', gap: '5rem', marginTop: '100px'}}>
-                <Card>
-                    <CardContent>
-                        <Typography variant="body2">
-                            "Lizards are a widespread group of squamate reptiles, with over 6,000
-                            species, ranging across all continents except Antarcticadfsdfsdfsdf"
+            <Box>
+                <Box className="cards">
+                    <Box className='card'>
+                        <Avatar src={Estudante} />
+                        <Typography variant='p' className='heading'>
+                            Ronaldo
                         </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Stack direction="row" spacing={2}>
-                            <Avatar alt="Remy Sharp" src={EstudanteAvatar}/>
-                        </Stack>
-                        <Typography variant='body1'  sx={{marginLeft: '1rem'}}>Davi Silva </Typography>
-                      
-                      <LinkedInIcon sx={{fontSize: '2rem', color: 'white', marginLeft: '5px'}} />
-                      
-                    </CardActions>
-                </Card>
-
-                <Card>
-                    <CardContent>
-                        <Typography variant="body2">
-                            "Lizards are a widespread group of squamate reptiles, with over 6,000
-                            species, ranging across all continents except Antarcticadfsdfsdfsdf"
+                        <Typography variant='p' className='paragrafo'>
+                            "Participar do curso sobre reinados foi uma experiência enriquecedora. As lições são bem estruturadas, abordando desde os aspectos políticos até os detalhes culturais de cada época. "
                         </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Stack direction="row" spacing={2}>
-                            <Avatar alt="Remy Sharp" src={EstudanteAvatar}/>
-                        </Stack>
-                        <Typography variant='body1'  sx={{marginLeft: '1rem'}}>Davi Silva </Typography>
-                      
-                      <LinkedInIcon sx={{fontSize: '2rem', color: 'white', marginLeft: '5px'}} />
-                      
-                    </CardActions>
-                </Card>
+                        <Typography variant='p' className='paragrafo'>
+                            Reign
+                        </Typography>
 
-                <span class="loader"></span>
+                    </Box>
+
+                    <Box className='card'>
+                        <Avatar src={Estudante} />
+                        <Typography variant='p' className='heading'>
+                            Marcela Kaká
+                        </Typography>
+                        <Typography variant='p' className='paragrafo'>
+                            "O curso sobre reinados superou minhas expectativas! Aprofundei meu entendimento sobre os períodos históricos e seus líderes. "
+                        </Typography>
+                        <Typography variant='p' className='paragrafo'>
+                            Reign
+                        </Typography>
+
+                    </Box>
+
+                    <Box className='card'>
+                        <Avatar src={Estudante} />
+                        <Typography variant='p' className='heading'>
+                            Fernanda
+                        </Typography>
+                        <Typography variant='p' className='paragrafo'>
+                            "O curso sobre reinados foi um mergulho fascinante na história. A didática é excelente, tornando fácil assimilar informações detalhadas sobre diferentes monarcas e períodos."
+                        </Typography>
+                        <Typography variant='p' className='paragrafo'>
+                            Reign
+                        </Typography>
+
+                    </Box>
+                </Box>
+
             </Box>
 
 

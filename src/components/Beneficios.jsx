@@ -1,111 +1,101 @@
-import { Avatar, Box, Card, CardActions, CardContent, Stack, Typography } from "@mui/material";
-import Grid from '@mui/material/Grid';
-import WorkIcon from '@mui/icons-material/Work';
-import GroupsIcon from '@mui/icons-material/Groups';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
-import PersonIcon from '@mui/icons-material/Person';
-import NetworkWifiIcon from '@mui/icons-material/NetworkWifi';
-import StyledBeneficios from "./StyledBeneficios";
+import * as React from 'react';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
+import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
+import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Typography } from '@mui/material';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
 
-function Beneficios() {
-
+export default function Beneficios() {
     return (
-        <StyledBeneficios>
-            <Typography variant="h2">
-                Benefícios de estudar na Reign
-            </Typography>
-            <Box sx={{ flexGrow: 1, padding: '1rem', width: '80%', margin: '0 auto' }}>
-                <Grid container spacing={2} columns={12}>
-                    <Grid item xs={4}>
-                        <Card>
-                            <WorkIcon sx={{ fontSize: '90px', marginRight: '225px' }} />
-                            <CardContent>
-                                <Typography sx={{ fontSize: '1.2rem', marginBottom: '20px' }}>
-                                    Ambiente Empresarial Simulado
-                                </Typography>
-                                <Typography variant="body3">
-                                    "Lizards are a widespread group of squamate reptiles, with over 6,000
-                                    species, ranging across all continents except Antarcticadfsdfsdfsdf"
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <Card>
-                            <GroupsIcon sx={{ fontSize: '90px', marginRight: '225px' }} />
-                            <CardContent>
-                                <Typography sx={{ fontSize: '1.2rem', marginBottom: '20px' }}>
-                                    Participe em Células
-                                </Typography>
-                                <Typography variant="body3">
-                                    "Lizards are a widespread group of squamate reptiles, with over 6,000
-                                    species, ranging across all continents except Antarcticadfsdfsdfsdf"
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <Card>
-                            <MenuBookIcon sx={{ fontSize: '90px', marginRight: '225px' }} />
-                            <CardContent>
-                                <Typography sx={{ fontSize: '1.2rem', marginBottom: '20px' }}>
-                                    Acesso a Ebooks
-                                </Typography>
-                                <Typography variant="body3">
-                                    "Lizards are a widespread group of squamate reptiles, with over 6,000
-                                    species, ranging across all continents except Antarcticadfsdfsdfsdf"
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-
-                    <Grid item xs={4}>
-                        <Card>
-                            <PersonalVideoIcon sx={{ fontSize: '90px', marginRight: '225px' }} />
-                            <CardContent>
-                                <Typography sx={{ fontSize: '1.2rem', marginBottom: '20px' }}>
-                                   Aulas Ao Vivo
-                                </Typography>
-                                <Typography variant="body3">
-                                    "Lizards are a widespread group of squamate reptiles, with over 6,000
-                                    species, ranging across all continents except Antarcticadfsdfsdfsdf"
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <Card>
-                            <PersonIcon sx={{ fontSize: '90px', marginRight: '225px' }} />
-                            <CardContent>
-                                <Typography sx={{ fontSize: '1.2rem', marginBottom: '20px' }}>
-                                   Contanto Com Missionários 
-                                </Typography>
-                                <Typography variant="body3">
-                                    "Lizards are a widespread group of squamate reptiles, with over 6,000
-                                    species, ranging across all continents except Antarcticadfsdfsdfsdf"
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <Card>
-                            <NetworkWifiIcon sx={{ fontSize: '90px', marginRight: '225px' }} />
-                            <CardContent>
-                                <Typography sx={{ fontSize: '1.2rem', marginBottom: '20px' }}>
-                                 Acesso Vitalício
-                                </Typography>
-                                <Typography variant="body3">
-                                    "Lizards are a widespread group of squamate reptiles, with over 6,000
-                                    species, ranging across all continents except Antarcticadfsdfsdfsdf"
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </Grid>
-                </Grid>
-            </Box>
-        </StyledBeneficios>
-    )
+        <Timeline position="alternate" sx={{marginTop: "8rem", marginBottom: "8rem"}}>
+            <TimelineItem>
+                {/* <TimelineOppositeContent color="text.secondary">
+                    09:30 am
+                </TimelineOppositeContent> */}
+                <TimelineSeparator sx={{ height: '300px' }}>
+                    <TimelineDot sx={{background: "#07182E"}}>
+                        Reign
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                    <Box className='card-line'>
+                        <Typography className='h2-line'>
+                            Aprenda sobre Reinos
+                        </Typography>
+                        <Typography className='p-line'>
+                            Não deixe para depois
+                        </Typography>
+                    </Box>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                {/* <TimelineOppositeContent color="text.secondary">
+                    10:00 am
+                </TimelineOppositeContent> */}
+                <TimelineSeparator sx={{ height: '300px' }}>
+                    <TimelineDot sx={{background: "#07182E"}}>
+                        Reign
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                    <Box className='card-line' sx={{ position: 'relative', left: '480px' }}>
+                        <Typography className='h2-line'>
+                            Imersão em reinados
+                        </Typography>
+                        <Typography className='p-line'>
+                            Explore cada reino
+                        </Typography>
+                    </Box>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                {/* <TimelineOppositeContent color="text.secondary">
+                    12:00 am
+                </TimelineOppositeContent> */}
+                <TimelineSeparator sx={{ height: '300px' }}>
+                    <TimelineDot sx={{background: "#07182E"}}>
+                        Reign
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                    <Box className='card-line'>
+                        <Typography className='h2-line'>
+                            Comunidade
+                        </Typography>
+                        <Typography className='p-line'>
+                            Maior comunidade do país
+                        </Typography>
+                    </Box>
+                </TimelineContent>
+            </TimelineItem>
+            <TimelineItem>
+                {/* <TimelineOppositeContent color="text.secondary">
+                    9:00 am
+                </TimelineOppositeContent> */}
+                <TimelineSeparator>
+                    <TimelineDot sx={{background: "#07182E"}}>
+                        Reign
+                    </TimelineDot>
+                    <TimelineConnector />
+                </TimelineSeparator>
+                <TimelineContent>
+                    <Box className='card-line' sx={{ position: 'relative', left: '480px' }}>
+                        <Typography className='h2-line'>
+                            Acesso vitalício
+                        </Typography>
+                        <Typography className='p-line'>
+                            Tenha acesso para sempre
+                        </Typography>
+                    </Box>
+                </TimelineContent>
+            </TimelineItem>
+        </Timeline>
+    );
 }
-
-export default Beneficios;

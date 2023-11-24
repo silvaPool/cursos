@@ -10,19 +10,23 @@ import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { useState } from 'react';
+import StyledButtonHeader from './StyledButtonHeader';
 
 const StyledBox = styled(Box)`
     & {
-        height: 5vh;
+        height: 7vh;
         position: fixed;
         z-index: 1;
         width: 100%;
-        /* display: flex;
-        justify-content: space-between; */
+        display: flex;
+        padding: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #030328;
 
     }
 `
-//sx={{border: '1px solid green', height: '6vh', position: 'fixed', zIndex: '1', width: '100%', backgroundColor: 'black'}}
+
 function Header() {
 
     const [value, setValue] = useState(0);
@@ -30,14 +34,16 @@ function Header() {
     return (
         <StyledBox>
 
-           
-            <Typography sx={{ color: 'white', border: '1px solid red', height: '100%' }}>
+
+            <Typography variant='h2'>
                 Reign
             </Typography>
 
-           
-               
-        
+            <Box sx={{height: '40px', width: '320px', display: 'flex', justifyContent: "space-between", alignItems: 'center'}}>
+                <Button variant='text'>Entrar</Button>
+                <StyledButtonHeader>Assinar</StyledButtonHeader>
+            </Box>
+
 
 
         </StyledBox>

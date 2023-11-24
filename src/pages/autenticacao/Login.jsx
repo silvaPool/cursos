@@ -2,10 +2,12 @@ import React, { useContext, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Formik, useField, useFormik } from 'formik';
 import * as yup from 'yup';
-import { Button, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import { Form, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import styled from 'styled-components';
+import StyledForm from '../../components/StyledForm';
+import StyledButtonForm from '../../components/StyledButtonForm';
 
 
 
@@ -27,28 +29,14 @@ const MyTextInput = ({ label, ...props }) => {
 
 const StyledInput = styled(MyTextInput)`
 && {
-    margin-bottom: 1rem;
     width: 100%;
-    padding: 12px 18px;
-    font-size: 16px;
-    font-family: inherit;
-    box-shadow: 0 0 0 1px #070707;
+    height: 40px;
+    background: #e0dede;
+    padding: 10px;
     border: none;
-    border-radius: 25px;
-    background-color: #fff5f5;
-    transition: all .3s;
-
-    &::placeholder {
-        color: #243B55;
-        font-size: 14px;
-    }
-
-    &:focus {
-        outline: none;
-        box-shadow: 0 0 10px 1px black;
-        border: none;
-        transition: all .3s;
-    }
+    outline: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
 }`;
 
 
@@ -56,20 +44,15 @@ const StyledInput = styled(MyTextInput)`
 function Login() {
 
     const navigate = useNavigate();
-    const { login, user, signed } = useContext(AuthContext);
+    const { login, user, signed, handleSignIn } = useContext(AuthContext);
     const [errorsFirebase, setErrosFirebase] = useState("");
-
-   
-
-  
 
 
     return (
         <>
-        
-            <Stack spacing={4} textAlign={'left'} sx={{ height: '400px', paddingTop: '6rem'}}>
-                <Typography>
-                    Login
+            <Stack spacing={4} textAlign={'left'} sx={{position: 'relative', padding: '10px', gap: '5px', textAlign: 'center'}}>
+                <Typography sx={{margin: '25% 0 5%', color: '#fff', fontSize: '2rem', display:"flex", justifyContent: 'center', fontWeight: 'bold', cursor: 'pointer', transition: '.5s ease-in-out'}}>
+                    Log in
                 </Typography>
                 <Formik
                     initialValues={{ email: '', password: '' }}
@@ -97,7 +80,7 @@ function Login() {
                 >
 
                     {({ handleSubmit, errors }) => (
-                        <Form onSubmit={handleSubmit}>
+                        <form onSubmit={handleSubmit}>
                             <StyledInput
 
                                 name="email"
@@ -112,15 +95,18 @@ function Login() {
                                 placeholder="******"
                             />
 
-                            <Button type="submit">Entrar</Button>
+                            <StyledButtonForm type="submit">Entrar</StyledButtonForm>
+                            <StyledButtonForm onClick={handleSignIn} type="submit">Entrar com faceio</StyledButtonForm>
+                          
 
-                        </Form>
+                        </form>
 
                     )}
                 </Formik>
                 <Typography variant='body1'>{errorsFirebase}</Typography>
 
             </Stack>
+
         </>
 
     )

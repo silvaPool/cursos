@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Informativo from "./Informativo";
 import Hero from "./Hero";
 import Header from "./Header";
+import Pagamento from "./Pagamento";
 
 
 function LandingPage() {
@@ -20,6 +21,7 @@ function LandingPage() {
             <Cursos />
             <Depoimentos />
             <Beneficios />
+            <Pagamento />
             <Duvidas />
             <Footer />
 

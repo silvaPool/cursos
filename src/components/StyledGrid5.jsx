@@ -5,9 +5,7 @@ import Grid from '@mui/material/Grid';
 const StyledGrid5 = styled(Grid)`
      & {
        position: relative;
-       background: #3C3B3F;  
-       background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);  
-       background: linear-gradient(to right, #605C3C, #3C3B3F); 
+       background: linear-gradient(80deg, #0077cc 0%, #003366 100%);
        display: flex;
        align-items: center;
        justify-content: center;
@@ -28,7 +26,9 @@ const StyledGrid5 = styled(Grid)`
         justify-content: center;
         font-size: 25px;
         font-weight: bold;
-        background-color: white;
+        background: #8E2DE2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         transition: all 0.5s;
        }
 
@@ -50,7 +50,7 @@ const StyledGrid5 = styled(Grid)`
         width: 100%;
         height: 100%;
         transition: all 0.5s;
-        color: black;
+        color: white;
        }
 
        &:hover::after {

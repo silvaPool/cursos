@@ -1,6 +1,6 @@
 import LandingPage from '../components/LandingPage'
 import Login from '../pages/autenticacao/Login';
-import Cadastro from '../pages/autenticacao/cadastro';
+import Cadastro from '../pages/autenticacao/Cadastro';
 import MainGuard from '../utils/MainGuard';
 
 const OpenRoutes = [

@@ -11,6 +11,7 @@ const theme = createTheme({
                 outlined: {
                     border: '1px solid white',
                     color: 'white',
+                    width: '80%',
                 },
 
                 contained: {
@@ -44,48 +45,32 @@ const theme = createTheme({
                 },
             },
         },
-        MuiCard: {
+
+        MuiPaper: {
             styleOverrides: {
                 root: {
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                    borderRadius: '1rem',
-                    color: 'white',
-                    maxWidth: '350px',
-                    height: '300px',
-                    boxShadow: '2px 2px 10px white',
-                    padding: '5px',
-
-
-                },
-
-            },
-
-        },
-
-        MuiCardContent: {
-            styleOverrides: {
-                root: {
-                    textAlign: 'left',
-                    height: '160px',
-                    marginBottom: '30px',
-
+                    backgroundColor: 'white',
+                    marginBottom: '1rem',
+                    borderRadius: '2rem',
+                   
                 },
             },
         },
+        
         MuiAccordionSummary: {
             styleOverrides: {
                 root: {
-                    backgroundColor: 'black',
+                    backgroundColor: '#07182E',
                     color: 'white',
-                 
-                    height: '60px',
+                    textTransform: 'capitalize',
+                    height: '70px',
                 },
             },
         },
         MuiAccordionDetails: {
             styleOverrides: {
                 root: {
-                    backgroundColor: 'black',
+                    backgroundColor: '#0C243A',
                     color: 'white',
                     
                 },
@@ -95,16 +80,6 @@ const theme = createTheme({
             styleOverrides: {
                 root: {
                     color: 'white',
-                },
-            },
-        },
-        MuiPaper: {
-            styleOverrides: {
-                root: {
-                    backgroundColor: 'white',
-                    marginBottom: '1rem',
-                    borderRadius: '2rem',
-                   
                 },
             },
         },
@@ -122,6 +97,22 @@ const theme = createTheme({
                 },
             },
         },
+        MuiInputBase: {
+            styleOverrides: {
+                root: {
+                    color: 'white',
+                    
+                },
+            },
+        },
+        MuiInputLabel: {
+            styleOverrides: {
+                root: {
+                    color: 'white',
+                   
+                }
+            }
+        }
     },
 
 });

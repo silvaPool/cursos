@@ -6,6 +6,8 @@ import emailjs from 'emailjs-com';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import { Button, TextField } from '@mui/material';
+import StyledForm from '../../components/StyledForm';
+import StyledInputForm from '../../components/StyledInputForm';
 
 
 
@@ -52,9 +54,9 @@ const Cadastro = () => {
 
   return (
     <div>
-      <form onSubmit={formik.handleSubmit}>
+      <form style={{textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px'}} onSubmit={formik.handleSubmit}>
         <TextField
-          sx={{ marginBottom: '3rem' }}
+          sx={{ marginBottom: '3rem', border: '1px solid white', width: '70%' }}
           fullWidth
           id="nome"
           name="nome"
@@ -64,10 +66,10 @@ const Cadastro = () => {
           onBlur={formik.handleBlur}
           error={formik.touched.nome && Boolean(formik.errors.nome)}
           helperText={formik.touched.nome && formik.errors.nome}
-        />
+         />
 
         <TextField
-          sx={{ marginBottom: '3rem' }}
+          sx={{ marginBottom: '3rem', border: '1px solid white', width: '70%' }}
           fullWidth
           id="email"
           name="email"
@@ -80,7 +82,7 @@ const Cadastro = () => {
         />
 
         <TextField
-          sx={{ marginBottom: '3rem' }}
+          sx={{ marginBottom: '3rem', border: '1px solid white', width: '70%' }}
           fullWidth
           id="password"
           name="password"
@@ -94,7 +96,7 @@ const Cadastro = () => {
         />
 
         <TextField
-          sx={{ marginBottom: '3rem' }}
+          sx={{ marginBottom: '3rem', border: '1px solid white', width: '70%' }}
           fullWidth
           id="passwordRepet"
           name="passwordRepet"

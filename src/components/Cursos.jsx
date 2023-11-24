@@ -5,6 +5,7 @@ import Estudante from '../assets/images/estudante.jpg';
 import StyledBoxImg from './StyledBoxImg';
 import Button from '@mui/material/Button';
 import { useState } from 'react';
+import Animal from '../assets/images/animation.gif'
 
 const style = {
     position: 'absolute',
@@ -46,40 +47,37 @@ function Cursos() {
                     Aceleração baseada na metodologia do Project-Based Learning
                 </Typography>
 
-            <Box sx={{position: 'relative', display: 'flex', flexDirection: 'column'}}>
-                
-
-                <Typography sx={{ width: '45%',  marginBottom: '1rem', marginTop: '1rem', margin: '0 auto', textAlign: 'left'}}>
-                    O PBL não é apenas um método, é uma imersão. Trata-se de aprender programação web através da execução de projetos concretos, sempre com um olhar voltado para as demandas atuais do mercado de trabalho.
-
-                    Nosso compromisso é prepará-lo para entregar exatamente o que o mercado busca: valor tangível para o cliente final.
-
-                    Com a Firstday, não só você desenvolverá um portfólio recheado de projetos significativos, como também assimilará conceitos teóricos de maneira aplicada. O resultado? Superar aquela estagnação e ascender em sua jornada como desenvolvedor web.
+                <Box sx={{ position: 'relative', display: 'flex', flexDirection: 'column' }}>
 
 
-                </Typography>
+                    <Typography sx={{ width: '45%', marginBottom: '1rem', marginTop: '1rem', margin: '0 auto', textAlign: 'left' }}>
+                        O PBL é uma abordagem educacional centrada no aluno, que vai além da simples transmissão de informações. Em vez disso, os estudantes enfrentam desafios do mundo real, trabalhando em equipes colaborativas para resolver problemas complexos. Este método estimula a curiosidade, a resolução de problemas e a aplicação prática do conhecimento.
 
-                <Button onClick={handleOpen} variant='outlined' sx={{width: '10rem', position: 'relative', left: '27.5%', top: '10%'}}>Saiba mais</Button>
-                <Modal
-                    open={open}
-                    onClose={handleClose}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                >
-                    <Box sx={style}>
-                        <Typography id="modal-modal-title" variant="h6" component="h2">
-                            Informação importante
-                        </Typography>
-                        <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                            Estes cursos não tem certificados!
-                        </Typography>
-                    </Box>
-                </Modal>
+
+                    </Typography>
+
+                    <Button onClick={handleOpen} variant='outlined' sx={{ width: '10rem', position: 'relative', left: '27.5%', top: '10%' }}>Saiba mais</Button>
+                    <Modal
+                        open={open}
+                        onClose={handleClose}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
+                    >
+                        <Box sx={style}>
+                            <Typography id="modal-modal-title" variant="h6" component="h2">
+                                Informação importante
+                            </Typography>
+                            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                                Estes cursos não tem certificados!
+                            </Typography>
+                        </Box>
+                    </Modal>
 
                 </Box>
             </StyledCursos>
 
-          
+
+
         </Box>
     )
 }
