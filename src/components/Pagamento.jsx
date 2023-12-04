@@ -8,10 +8,10 @@ function Pagamento() {
         <Box sx={{ borderRadius: '2rem', height: '80vh', maxWidth: '1500px', margin: '0 auto', display: 'flex', flexDirection: 'row', padding: '10px', justifyContent: 'center', alignItems: 'center', background: `linear-gradient(rgba(7, 24, 46, 0.5), rgba(7, 24, 46, 0.5)), url(${Davi})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
          
             <Box className='card-pagamento'>
-                <Typography sx={{ fontSize: '2rem' }} className='h2-pagamentos'>
+                <Typography sx={{ fontSize: '2rem'}} className='h2-pagamentos'>
                     3 Meses
                 </Typography>
-                <Typography sx={{ fontSize: '3rem' }} className='p-line'>
+                <Typography sx={{ fontSize: '3rem'}} className='p-line'>
                     R$ 74,90
                 </Typography>
                 <Typography sx={{ fontSize: '1rem' }} className='p-line'>

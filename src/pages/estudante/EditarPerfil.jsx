@@ -1,5 +1,5 @@
-import { Avatar, Box, Button, Container, Divider, Grid, Typography } from "@mui/material";
-import React from "react";
+import { Avatar, Box, Button, Container, Divider, FormLabel, Grid, Typography } from "@mui/material";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
@@ -11,6 +11,9 @@ import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import { ErrorMessage, Field, Form, Formik, useField } from "formik";
 import * as yup from 'yup';
 import Turma from './Turma';
+import { setPhoto } from "../../services/profile";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const MyTextInput = ({ label, ...props }) => {
 
@@ -70,6 +73,24 @@ const StyledInput = styled(MyTextInput)`
 function EditarPerfil() {
 
     const [value, setValue] = React.useState('1');
+    const [avatar, setAvatar] = useState('');
+    const [fileData, setFileData] = useState();
+    const {user} = useContext(AuthContext);
+
+    function handleAvatar(e) {
+        const fileUser = e.target.files[0];
+        setFileData(fileUser);
+        setAvatar(URL.createObjectURL(fileUser));
+    }
+
+    async function uploadFileImage() {
+        try {
+            const url = await setPhoto(fileData, user.uid);
+            setAvatar(url);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -123,13 +144,19 @@ function EditarPerfil() {
                                     </Typography>
                                     <Divider sx={{ backgroundColor: 'white' }} />
 
-                                    <Avatar
-                                        sx={{ bgcolor: 'white', margin: '1rem auto' }}
+                                    {/* <Avatar
+                                        sx={{ bgcolor: 'black', margin: '1rem auto' }}
                                         alt="Remy Sharp"
                                         src="/broken-image.jpg"
                                     >
                                         B
-                                    </Avatar>
+                                    </Avatar> */}
+
+                                    <FormLabel htmlFor="foto" sx={{ cursor: 'pointer', overflow: 'hidden'  }}>
+                                        <Avatar alt="Remy Sharp" src={avatar} sx={{margin: '1rem auto'}} />
+                                    </FormLabel>
+                                    <TextField type="file" name="foto" id="foto" onChange={(e) => handleAvatar(e)} sx={{ display: 'none' }} />
+                                    
 
                                     <Formik
                                         initialValues={{ nome: '', sobrenome: '', email: '', telefone: '' }}
@@ -193,10 +220,10 @@ function EditarPerfil() {
                                                         />
 
                                                     </Grid>
-                                                    <Grid item xs={12}  sx={{ display: 'flex', gap: '1rem'}}>
+                                                    <Grid item xs={12} sx={{ display: 'flex', gap: '1rem' }}>
 
-                                                    <Button variant="outlined">Cancelar</Button>
-                                                    <Button type="submit" variant="contained">Entrar</Button>
+                                                        <Button variant="outlined">Cancelar</Button>
+                                                        <Button type="submit" variant="contained">Entrar</Button>
 
                                                     </Grid>
 
@@ -230,7 +257,7 @@ function EditarPerfil() {
                                     </Typography>
                                     <Divider sx={{ backgroundColor: 'white' }} />
 
-                                   <Turma />
+                                    <Turma />
 
                                 </TabPanel>
                                 <TabPanel value="3">Formação Acadêmica</TabPanel>

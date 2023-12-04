@@ -5,6 +5,7 @@ import { Auth } from './context/AuthContext'
 import Routes from './routes/AppRoutes';
 import MyForm from './pages/estudante/Turma';
 import { useEffect } from 'react';
+import LayoutInterior from './pages/estudante/LayoutInterior';
 
 
 
@@ -21,9 +22,7 @@ function App() {
       <button onClick={handleLogIn}>Log-in</button>
     </section> */}
 
-
-
-
+   
       <ThemeProvider theme={theme}>
         <Auth>
           <Routes />
